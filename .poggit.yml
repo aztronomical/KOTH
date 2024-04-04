@@ -13,9 +13,6 @@ projects:
       - src: CortexPE/Commando/Commando
         version: 3.0.0
         branch: PM4
-      - src: thebigsmilexd/apibossbar/apibossbar
-        version: 0.1.5
-        branch: PM4
       - src: Muqsit/SimplePacketHandler/SimplePacketHandler
         version: 0.1.0
     lint:

@@ -36,4 +36,9 @@ class kothCommand extends BaseCommand {
 	public function onRun(CommandSender $sender, string $aliasUsed, array $args): void{
 		$this->sendUsage();
 	}
+
+	public function getPermission(): string
+	{
+		return $this->getPermissionMessage();
+	}
 }

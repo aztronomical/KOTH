@@ -5,9 +5,6 @@ update_delay: 2
 #The time (IN SECONDS) to capture KOTH:
 capture_time: 300
 
-#Should the plugin display KOTH information on the bossbar (top of screen) (on/off):
-bossbar: on
-
 #Should the plugin display KOTH information above the hotbar (bottom of screen) (on/off):
 hotbar_popups: off
 

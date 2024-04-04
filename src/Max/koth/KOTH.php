@@ -28,13 +28,11 @@ class KOTH extends PluginBase{
 
 	public ?TaskHandler $task;
 	public ?Arena $current;
-	public BossBar $bar;
 	public array $arenas;
 
 	public int $TASK_DELAY;
 	public int $CAPTURE_TIME;
 	public bool $SEND_TIPS;
-	public bool $USE_BOSSBAR;
 	public array $REWARD_COMMANDS;
 	public string $START_MESSAGE;
 	public string $END_MESSAGE;
@@ -53,7 +51,6 @@ class KOTH extends PluginBase{
 
 		$this->TASK_DELAY = $config->get("update_delay", 2);
 		$this->CAPTURE_TIME = $config->get("capture_time", 300);
-		$this->USE_BOSSBAR = $config->get("bossbar", True);
 		$this->SEND_TIPS = $config->get("hotbar_popups", False);
 		$this->REWARD_COMMANDS = $config->get("reward_command", ["give {PLAYER} diamond 64", "give {PLAYER} obsidian 64"]);
 		$this->START_MESSAGE = $config->get("start_message", "KOTH {KOTH} has started!");
@@ -68,8 +65,6 @@ class KOTH extends PluginBase{
 		foreach ($this->data->getAll() as $arenaName => $arenaData) {
 			$this->arenas[$arenaName] = new Arena($arenaName);
 		}
-
-		if ($this->USE_BOSSBAR) $this->bar = new BossBar();
 
 		if(!PacketHooker::isRegistered()) {
 			PacketHooker::register($this);
@@ -145,7 +140,6 @@ class KOTH extends PluginBase{
 		$this->task->cancel();
 		$this->task = null;
 		$this->current = null;
-		$this->bar->removeAllPlayers();
 		$this->getServer()->broadcastMessage(str_replace("{PLAYER}", $winnerName, $this->END_MESSAGE));
 		if($this->WEBHOOK_LINK) {
 			$webHook = new Webhook($this->WEBHOOK_LINK);

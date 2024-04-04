@@ -45,16 +45,6 @@ class KothTask extends Task {
 		$minutes = floor($timeLeft/60);
 		$seconds = sprintf("%02d", ($timeLeft - ($minutes * 60)));
 
-		if ($this->pl->USE_BOSSBAR) {
-			foreach (Server::getInstance()->getOnlinePlayers() as $player){
-				$this->pl->bar->removePlayer($player);
-				$this->pl->bar->setTitle("§bKOTH: §c" . $this->arena->getName() . "§r - §bTime: §c" . $minutes . ":" . $seconds);
-				$this->pl->bar->setSubTitle("§bKing: §c" . $this->kingName);
-				$this->pl->bar->setPercentage($timeLeft / $this->pl->CAPTURE_TIME);
-				$this->pl->bar->addPlayer($player);
-			}
-		}
-
 		if ($this->pl->SEND_TIPS){
 			foreach(Server::getInstance()->getOnlinePlayers() as $player) {
 				$player->sendTip("§bKOTH: §c".$this->arena->getName() . "§r - §bTime: §c" . $minutes . ":" . $seconds . "\n§bKing: §c" . $this->kingName);
