@@ -8,8 +8,6 @@ namespace Max\koth;
 use CortexPE\DiscordWebhookAPI\Message;
 use CortexPE\DiscordWebhookAPI\Webhook;
 use CortexPE\DiscordWebhookAPI\Embed;
-
-use xenialdan\apibossbar\BossBar;
 use CortexPE\Commando\PacketHooker;
 
 use Max\koth\Commands\kothCommand;
