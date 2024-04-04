@@ -43,9 +43,9 @@ class KOTH extends PluginBase{
 		self::$instance = $this;
 
 		$this->saveResource("config.yml");
-		$this->saveResource("data.yml");
+		// $this->saveResource("data.yml");
 		$config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-		$this->data = new Config($this->getDataFolder() . "data.yml", Config::YAML);
+		// $this->data = new Config($this->getDataFolder() . "data.yml", Config::YAML);
 
 		$this->TASK_DELAY = $config->get("update_delay", 2);
 		$this->CAPTURE_TIME = $config->get("capture_time", 300);
@@ -60,9 +60,9 @@ class KOTH extends PluginBase{
 		$this->current = null;
 		$this->task = null;
 
-		foreach ($this->data->getAll() as $arenaName => $arenaData) {
-			$this->arenas[$arenaName] = new Arena($arenaName);
-		}
+		// foreach ($this->data->getAll() as $arenaName => $arenaData) {
+		// 	$this->arenas[$arenaName] = new Arena($arenaName);
+		// }
 
 		if(!PacketHooker::isRegistered()) {
 			PacketHooker::register($this);
