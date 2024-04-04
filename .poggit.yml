@@ -11,7 +11,7 @@ projects:
         version: 1.0.2
         branch: PM4
       - src: CortexPE/Commando/Commando
-        version: 3.0.0
+        version: 3.2.0
         branch: PM4
       - src: Muqsit/SimplePacketHandler/SimplePacketHandler
         version: 0.1.3
