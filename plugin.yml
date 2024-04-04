@@ -4,7 +4,7 @@ author: ItsMax123
 
 main: Max\koth\KOTH
 version: 2.0.0
-api: 4.0.0
+api: 5.0.0
 
 permissions:
   maxkoth.command.koth.use:
